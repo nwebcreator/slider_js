@@ -17,60 +17,15 @@ sliderItems.forEach(function (slide, index){
 
     // Клик по слайдам
     slide.addEventListener('click', function () {
-
-        // Скрываем текущий слайд
-        slide.classList.add('hidden');
-        slide.removeAttribute('data-active');
-        
-        // Рассчитываем индекс следующего слайда
-
-        const nextSlideIndex = index + 1 === sliderItems.length ? 0 : index + 1;
-
-
-        // if (index + 1 === sliderItems.length) {
-        //     nextSlideIndex = 0;
-        // } else {
-        //     nextSlideIndex = index + 1;
-        // }
-       // const nextSlideIndex = parseInt(slide.dataset.index) + 1;
-
-        // Находим элемент со следующим слайдом
-        const nextSlide = slider.querySelector(`[data-index="${nextSlideIndex}"]`);
-
-        // Отображаем следующий слайд
-        nextSlide.classList.remove('hidden');
-        nextSlide.setAttribute('data-active', '');
+        showNextSlide('next');
     });
 });
 
 btnNext.onclick = function () {
-    // const currentSlide = slider.querySelector('[data-active]');
-    // const currentSlideIndex = +currentSlide.dataset.index;
-    // currentSlide.classList.add('hidden');
-    // currentSlide.removeAttribute('data-active');
-
-    // // Показываем следующий слайд
-    // const nextSlideIndex = currentSlideIndex + 1 === sliderItems.lenght ? 0 : currentSlideIndex + 1;
-    // const nextSlide = slider.querySelector(`[data-index="${nextSlideIndex}"]`);
-    // nextSlide.classList.remove('hidden');
-    // nextSlide.setAttribute('data-active', '');
-
     showNextSlide('next');
 };
 
 btnPrev.onclick = function () {
-    // const currentSlide = slider.querySelector('[data-active]');
-    // const currentSlideIndex = +currentSlide.dataset.index;
-    // currentSlide.classList.add('hidden');
-    // currentSlide.removeAttribute('data-active');
-
-    // // Показываем следующий слайд
-    // const nextSlideIndex = currentSlideIndex  ===  0 ? sliderItems.length - 1 : currentSlideIndex - 1;
-
-    // const nextSlide = slider.querySelector(`[data-index="${nextSlideIndex}"]`);
-    // nextSlide.classList.remove('hidden');
-    // nextSlide.setAttribute('data-active', '');
-
     showNextSlide('prev');
 };
 
